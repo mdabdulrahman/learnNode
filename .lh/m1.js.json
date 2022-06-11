@@ -1,0 +1,42 @@
+{
+    "sourceFile": "m1.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1654525287765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654525587664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n-}\n\\ No newline at end of file\n+}\r\n+module.exports={sayhello(name)}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654525622737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n }\r\n-module.exports={sayhello(name)}\n\\ No newline at end of file\n+module.exports=sayhello\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654525895253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n }\r\n-module.exports=sayhello\n\\ No newline at end of file\n+module.exports=sayhello(name)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654525946115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n }\r\n-module.exports=sayhello(name)\n\\ No newline at end of file\n+module.exports=sayhello\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654526090401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n }\r\n-module.exports=sayhello\n\\ No newline at end of file\n+module.exports={sayhello}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654526205406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const sayhello=(name)=>{\r\n console.log(`hello ${name}`)\r\n }\r\n-module.exports={sayhello}\n\\ No newline at end of file\n+module.exports=sayhello\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1654525287765,
+            "name": "Commit-0",
+            "content": "const sayhello=(name)=>{\r\nconsole.log(`hello ${name}`)\r\n}"
+        }
+    ]
+}

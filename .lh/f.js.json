@@ -1,0 +1,122 @@
+{
+    "sourceFile": "f.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1654179462012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654179758033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n var http = require('http');\r\n+var dt = require('fm');\r\n \r\n http.createServer(function (req, res) {\r\n   res.writeHead(200, {'Content-Type': 'text/html'});\r\n-  res.end('Hello World!');\r\n+  res.write(\"The date and time are currently: \" + dt.myDateTime());\r\n+  res.end();\r\n }).listen(8080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654179850110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var http = require('http');\r\n-var dt = require('fm');\r\n+var dt = require('./fm');\r\n \r\n http.createServer(function (req, res) {\r\n   res.writeHead(200, {'Content-Type': 'text/html'});\r\n   res.write(\"The date and time are currently: \" + dt.myDateTime());\r\n"
+                },
+                {
+                    "date": 1654179953425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n http.createServer(function (req, res) {\r\n   res.writeHead(200, {'Content-Type': 'text/html'});\r\n   res.write(\"The date and time are currently: \" + dt.myDateTime());\r\n   res.end();\r\n-}).listen(8080);\n\\ No newline at end of file\n+}).listen(9080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654180369054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,8 @@\n var dt = require('./fm');\r\n \r\n http.createServer(function (req, res) {\r\n   res.writeHead(200, {'Content-Type': 'text/html'});\r\n-  res.write(\"The date and time are currently: \" + dt.myDateTime());\r\n+  res.write(\"The date and time are currently: \" + dt.myDateTime()+req.url);\r\n+\r\n   res.end();\r\n }).listen(9080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654181451537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n var http = require('http');\r\n-var dt = require('./fm');\r\n+var url = require('url');\r\n \r\n http.createServer(function (req, res) {\r\n   res.writeHead(200, {'Content-Type': 'text/html'});\r\n-  res.write(\"The date and time are currently: \" + dt.myDateTime()+req.url);\r\n-\r\n-  res.end();\r\n\\ No newline at end of file\n-}).listen(9080);\n+  var q = url.parse(req.url, true).query;\r\n+  var txt = q.year + \" \" + q.month;\r\n+  res.end(txt);\r\n+}).listen(8080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654181759675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n var http = require('http');\r\n-var url = require('url');\r\n-\r\n+var fs = require('fs');\r\n http.createServer(function (req, res) {\r\n-  res.writeHead(200, {'Content-Type': 'text/html'});\r\n-  var q = url.parse(req.url, true).query;\r\n-  var txt = q.year + \" \" + q.month;\r\n-  res.end(txt);\r\n+  fs.readFile('..\\webVScodes\\whatsapp.html', function(err, data) {\r\n+    res.writeHead(200, {'Content-Type': 'text/html'});\r\n+    res.write(data);\r\n+    return res.end();\r\n+  });\r\n }).listen(8080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654181899740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var http = require('http');\r\n var fs = require('fs');\r\n http.createServer(function (req, res) {\r\n-  fs.readFile('..\\webVScodes\\whatsapp.html', function(err, data) {\r\n+  fs.readFile('...\\webVScodes\\whatsapp.html', function(err, data) {\r\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n"
+                },
+                {
+                    "date": 1654181954744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var http = require('http');\r\n var fs = require('fs');\r\n http.createServer(function (req, res) {\r\n-  fs.readFile('...\\webVScodes\\whatsapp.html', function(err, data) {\r\n+  fs.readFile('whatsapp.html', function(err, data) {\r\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n"
+                },
+                {
+                    "date": 1654181980241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var http = require('http');\r\n var fs = require('fs');\r\n http.createServer(function (req, res) {\r\n-  fs.readFile('whatsapp.html', function(err, data) {\r\n+  fs.readFile('./whatsapp.html', function(err, data) {\r\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n"
+                },
+                {
+                    "date": 1654182024653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n-}).listen(8080);\n\\ No newline at end of file\n+}).listen(9080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654182051879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,5 @@\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n-}).listen(9080);\n\\ No newline at end of file\n+}).listen(8090);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654182885899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,17 @@\n var http = require('http');\r\n+var url = require('url');\r\n var fs = require('fs');\r\n+\r\n http.createServer(function (req, res) {\r\n-  fs.readFile('./whatsapp.html', function(err, data) {\r\n+  var q = url.parse(req.url, true);\r\n+  var filename = \".\" + q.pathname;\r\n+  fs.readFile(filename, function(err, data) {\r\n\\ No newline at end of file\n+    if (err) {\r\n+      res.writeHead(404, {'Content-Type': 'text/html'});\r\n+      return res.end(\"404 Not Found\");\r\n+    } \r\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n     res.write(data);\r\n     return res.end();\r\n   });\r\n-}).listen(8090);\n+}).listen(8080);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654183812207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,25 @@\n var http = require('http');\r\n-var url = require('url');\r\n+var formidable = require('formidable');\r\n var fs = require('fs');\r\n \r\n http.createServer(function (req, res) {\r\n-  var q = url.parse(req.url, true);\r\n-  var filename = \".\" + q.pathname;\r\n-  fs.readFile(filename, function(err, data) {\r\n-    if (err) {\r\n-      res.writeHead(404, {'Content-Type': 'text/html'});\r\n-      return res.end(\"404 Not Found\");\r\n-    } \r\n+  if (req.url == '/fileupload') {\r\n+    var form = new formidable.IncomingForm();\r\n+    form.parse(req, function (err, fields, files) {\r\n+      var oldpath = files.filetoupload.filepath;\r\n\\ No newline at end of file\n+      var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;\r\n+      fs.rename(oldpath, newpath, function (err) {\r\n+        if (err) throw err;\r\n+        res.write('File uploaded and moved!');\r\n+        res.end();\r\n+      });\r\n+ });\r\n+  } else {\r\n     res.writeHead(200, {'Content-Type': 'text/html'});\r\n-    res.write(data);\r\n+    res.write('<form action=\"fileupload\" method=\"post\" enctype=\"multipart/form-data\">');\r\n+    res.write('<input type=\"file\" name=\"filetoupload\"><br>');\r\n+    res.write('<input type=\"submit\">');\r\n+    res.write('</form>');\r\n     return res.end();\r\n-  });\r\n-}).listen(8080);\n+  }\r\n+}).listen(8080);\r\n"
+                },
+                {
+                    "date": 1654184182726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,5 +21,5 @@\n     res.write('<input type=\"submit\">');\r\n     res.write('</form>');\r\n     return res.end();\r\n   }\r\n-}).listen(8080);\n\\ No newline at end of file\n+}).listen(9080);\r\n"
+                },
+                {
+                    "date": 1654184764626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,24 @@\n-var http = require('http');\r\n-var formidable = require('formidable');\r\n-var fs = require('fs');\r\n+var nodemailer = require('nodemailer');\r\n \r\n-http.createServer(function (req, res) {\r\n-  if (req.url == '/fileupload') {\r\n-    var form = new formidable.IncomingForm();\r\n-    form.parse(req, function (err, fields, files) {\r\n-      var oldpath = files.filetoupload.filepath;\r\n-      var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;\r\n-      fs.rename(oldpath, newpath, function (err) {\r\n-        if (err) throw err;\r\n-        res.write('File uploaded and moved!');\r\n-        res.end();\r\n-      });\r\n- });\r\n+var transporter = nodemailer.createTransport({\r\n+  service: 'gmail',\r\n+  auth: {\r\n+    user: 'youremail@gmail.com',\r\n+    pass: 'yourpassword'\r\n+  }\r\n+});\r\n+\r\n+var mailOptions = {\r\n+  from: 'youremail@gmail.com',\r\n+  to: 'myfriend@yahoo.com',\r\n+  subject: 'Sending Email using Node.js',\r\n+  text: 'That was easy!'\r\n+};\r\n+\r\n+transporter.sendMail(mailOptions, function(error, info){\r\n+  if (error) {\r\n+    console.log(error);\r\n   } else {\r\n-    res.writeHead(200, {'Content-Type': 'text/html'});\r\n-    res.write('<form action=\"fileupload\" method=\"post\" enctype=\"multipart/form-data\">');\r\n-    res.write('<input type=\"file\" name=\"filetoupload\"><br>');\r\n-    res.write('<input type=\"submit\">');\r\n-    res.write('</form>');\r\n-    return res.end();\r\n+    console.log('Email sent: ' + info.response);\r\n   }\r\n-}).listen(9080);\r\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654184846538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,30 @@\n+var http = require('http');\r\n+var formidable = require('formidable');\r\n+var fs = require('fs');\r\n var nodemailer = require('nodemailer');\r\n \r\n-var transporter = nodemailer.createTransport({\r\n-  service: 'gmail',\r\n-  auth: {\r\n-    user: 'youremail@gmail.com',\r\n-    pass: 'yourpassword'\r\n-  }\r\n-});\r\n \r\n-var mailOptions = {\r\n-  from: 'youremail@gmail.com',\r\n-  to: 'myfriend@yahoo.com',\r\n-  subject: 'Sending Email using Node.js',\r\n-  text: 'That was easy!'\r\n-};\r\n-\r\n-transporter.sendMail(mailOptions, function(error, info){\r\n-  if (error) {\r\n-    console.log(error);\r\n-  } else {\r\n\\ No newline at end of file\n-    console.log('Email sent: ' + info.response);\r\n-  }\r\n-});\n+http.createServer(function (req, res) {\r\n+    var transporter = nodemailer.createTransport({\r\n+        service: 'gmail',\r\n+        auth: {\r\n+          user: 'youremail@gmail.com',\r\n+          pass: 'yourpassword'\r\n+        }\r\n+      });\r\n+      \r\n+      var mailOptions = {\r\n+        from: 'youremail@gmail.com',\r\n+        to: 'myfriend@yahoo.com',\r\n+        subject: 'Sending Email using Node.js',\r\n+        text: 'That was easy!'\r\n+      };\r\n+      \r\n+      transporter.sendMail(mailOptions, function(error, info){\r\n+        if (error) {\r\n+          console.log(error);\r\n+        } else {\r\n+          console.log('Email sent: ' + info.response);\r\n+        }\r\n+      });\r\n+}).listen(8080);\r\n"
+                },
+                {
+                    "date": 1654185048809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n http.createServer(function (req, res) {\r\n     var transporter = nodemailer.createTransport({\r\n         service: 'gmail',\r\n         auth: {\r\n-          user: 'youremail@gmail.com',\r\n-          pass: 'yourpassword'\r\n+          user: 'abdul3rahman8@gmail.com',\r\n+          pass: 'MARS.2004'\r\n         }\r\n       });\r\n       \r\n       var mailOptions = {\r\n-        from: 'youremail@gmail.com',\r\n-        to: 'myfriend@yahoo.com',\r\n+        from: 'abdul3rahman8@gmail.com',\r\n+        to: 'abu3abu6@gmail.com',\r\n         subject: 'Sending Email using Node.js',\r\n         text: 'That was easy!'\r\n       };\r\n       \r\n"
+                },
+                {
+                    "date": 1654185080187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n         } else {\r\n           console.log('Email sent: ' + info.response);\r\n         }\r\n       });\r\n-}).listen(8080);\r\n+}).listen(9080);\r\n"
+                },
+                {
+                    "date": 1654265045424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n         } else {\r\n           console.log('Email sent: ' + info.response);\r\n         }\r\n       });\r\n-}).listen(9080);\r\n+}).listen(8080);\r\n"
+                },
+                {
+                    "date": 1654267132742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n http.createServer(function (req, res) {\r\n     var transporter = nodemailer.createTransport({\r\n         service: 'gmail',\r\n         auth: {\r\n-          user: 'abdul3rahman8@gmail.com',\r\n+          user: 'abdul3rahman6@gmail.com',\r\n           pass: 'MARS.2004'\r\n         }\r\n       });\r\n       \r\n"
+                },
+                {
+                    "date": 1654267583490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n http.createServer(function (req, res) {\r\n     var transporter = nodemailer.createTransport({\r\n         service: 'gmail',\r\n         auth: {\r\n-          user: 'abdul3rahman6@gmail.com',\r\n+          user: 'abdul3rahman8@gmail.com',\r\n           pass: 'MARS.2004'\r\n         }\r\n       });\r\n       \r\n"
+                },
+                {
+                    "date": 1654267841863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,28 +3,26 @@\n var fs = require('fs');\r\n var nodemailer = require('nodemailer');\r\n \r\n \r\n-http.createServer(function (req, res) {\r\n-    var transporter = nodemailer.createTransport({\r\n-        service: 'gmail',\r\n-        auth: {\r\n-          user: 'abdul3rahman8@gmail.com',\r\n-          pass: 'MARS.2004'\r\n-        }\r\n-      });\r\n-      \r\n-      var mailOptions = {\r\n-        from: 'abdul3rahman8@gmail.com',\r\n-        to: 'abu3abu6@gmail.com',\r\n-        subject: 'Sending Email using Node.js',\r\n-        text: 'That was easy!'\r\n-      };\r\n-      \r\n-      transporter.sendMail(mailOptions, function(error, info){\r\n-        if (error) {\r\n-          console.log(error);\r\n-        } else {\r\n-          console.log('Email sent: ' + info.response);\r\n-        }\r\n-      });\r\n-}).listen(8080);\r\n+var transporter = nodemailer.createTransport({\r\n+  service: 'gmail',\r\n+  auth: {\r\n+    user: 'abdul3rahman8@gmail.com',\r\n+    pass: 'MARS.2004'\r\n+  }\r\n+});\r\n+\r\n+var mailOptions = {\r\n+  from: 'abdul3rahman8@gmail.com',\r\n+  to: 'abu3abu6@gmail.com',\r\n+  subject: 'Sending Email using Node.js',\r\n+  text: 'That was easy!'\r\n+};\r\n+\r\n+transporter.sendMail(mailOptions, function(error, info){\r\n+  if (error) {\r\n+    console.log(error);\r\n+  } else {\r\n+    console.log('Email sent: ' + info.response);\r\n+  }\r\n+});\r\n"
+                },
+                {
+                    "date": 1654269147233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n var nodemailer = require('nodemailer');\r\n \r\n \r\n var transporter = nodemailer.createTransport({\r\n-  service: 'gmail',\r\n+  service: 'outlook',\r\n   auth: {\r\n-    user: 'abdul3rahman8@gmail.com',\r\n-    pass: 'MARS.2004'\r\n+    user: 'abdulrahmanasus@outlook.com',\r\n+    pass: 'cs crash&trtr&026/Asus'\r\n   }\r\n });\r\n \r\n var mailOptions = {\r\n"
+                },
+                {
+                    "date": 1654269200472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   }\r\n });\r\n \r\n var mailOptions = {\r\n-  from: 'abdul3rahman8@gmail.com',\r\n+  from: 'abdulrahmanasus@outlook.com',\r\n   to: 'abu3abu6@gmail.com',\r\n   subject: 'Sending Email using Node.js',\r\n   text: 'That was easy!'\r\n };\r\n"
+                },
+                {
+                    "date": 1654269298446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,15 +6,15 @@\n \r\n var transporter = nodemailer.createTransport({\r\n   service: 'outlook',\r\n   auth: {\r\n-    user: 'abdulrahmanasus@outlook.com',\r\n-    pass: 'cs crash&trtr&026/Asus'\r\n+    user: 'abdul3rahman8@gmail.com',\r\n+    pass: 'MARS.2004'\r\n   }\r\n });\r\n \r\n var mailOptions = {\r\n-  from: 'abdulrahmanasus@outlook.com',\r\n+  from: 'abdul3rahman8@gmail.com',\r\n   to: 'abu3abu6@gmail.com',\r\n   subject: 'Sending Email using Node.js',\r\n   text: 'That was easy!'\r\n };\r\n"
+                },
+                {
+                    "date": 1654269346229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n var nodemailer = require('nodemailer');\r\n \r\n \r\n var transporter = nodemailer.createTransport({\r\n-  service: 'outlook',\r\n+  service: 'gmail',\r\n   auth: {\r\n     user: 'abdul3rahman8@gmail.com',\r\n     pass: 'MARS.2004'\r\n   }\r\n"
+                }
+            ],
+            "date": 1654179462012,
+            "name": "Commit-0",
+            "content": "var http = require('http');\r\n\r\nhttp.createServer(function (req, res) {\r\n  res.writeHead(200, {'Content-Type': 'text/html'});\r\n  res.end('Hello World!');\r\n}).listen(8080);"
+        }
+    ]
+}

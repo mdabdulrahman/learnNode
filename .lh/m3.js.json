@@ -1,0 +1,106 @@
+{
+    "sourceFile": "m3.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1654610053009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654610073653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-const file=require(\"fs\")\n\\ No newline at end of file\n+const file=require(\"fs\")\r\n+console.log(file)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610141272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-const file=require(\"fs\")\r\n+const {readFileSync,writeFileSync}=require(\"fs\")\r\n console.log(file)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610152204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n-const {readFileSync,writeFileSync}=require(\"fs\")\r\n-console.log(file)\n\\ No newline at end of file\n+const {readFileSync,writeFileSync, read}=require(\"fs\")\r\n+console.log(readFileSync)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610169093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n const {readFileSync,writeFileSync, read}=require(\"fs\")\r\n-console.log(readFileSync)\n\\ No newline at end of file\n+console.log(readFileSync())\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610427399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,4 @@\n-const {readFileSync,writeFileSync, read}=require(\"fs\")\r\n-console.log(readFileSync())\n\\ No newline at end of file\n+const {readFileSync,writeFileSync}=require(\"fs\")\r\n+const f=readFileSync(\"./content/f2.txt\",\"utf16le\")\r\n+let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n+console.log(f,s);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610470174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n-const f=readFileSync(\"./content/f2.txt\",\"utf16le\")\r\n+const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n console.log(f,s);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610650426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n-console.log(f,s);\n\\ No newline at end of file\n+writeFileSync(\"./content/newfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it \")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610686429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n-writeFileSync(\"./content/newfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it \")\n\\ No newline at end of file\n+writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it \")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654610768408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n-writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it \")\n\\ No newline at end of file\n+writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it ,It is overwritten\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654611418314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n-writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it ,It is overwritten\")\n\\ No newline at end of file\n+writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it ,It is overwritten\",{flag:'a'})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654611502541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n-writeFileSync(\"./content/subfolder/new.txt\",\"Hello Rahman this seems to be working so dont worry about it ,It is overwritten\",{flag:'a'})\n\\ No newline at end of file\n+for (let i=1;i<27;i++){\r\n+writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}`,{flag:'a'})\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654611598376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n for (let i=1;i<27;i++){\r\n-writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}`,{flag:'a'})\r\n+writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654611895200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-const {readFileSync,writeFileSync}=require(\"fs\")\r\n+/* const {readFileSync,writeFileSync}=require(\"fs\")\r\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n for (let i=1;i<27;i++){\r\n writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n\\ No newline at end of file\n-}\n+} */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654612022796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,12 @@\n const f=readFileSync(\"./content/f2.txt\",\"ascii\")\r\n let s=readFileSync(\"./content/subfolder/f1.txt\",\"utf-8\")\r\n for (let i=1;i<27;i++){\r\n writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n-} */\n\\ No newline at end of file\n+} */\r\n+const {readFile,writeFile}=require('fs')\r\n+readFile('./content/f2.txt',(err,result)=>{\r\n+    if (err){\r\n+        console.log(err)\r\n+    }\r\n+    console.log(result)\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654612039671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n for (let i=1;i<27;i++){\r\n writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n } */\r\n const {readFile,writeFile}=require('fs')\r\n-readFile('./content/f2.txt',(err,result)=>{\r\n+readFile('./content/r2.txt',(err,result)=>{\r\n     if (err){\r\n         console.log(err)\r\n     }\r\n     console.log(result)\r\n"
+                },
+                {
+                    "date": 1654612058449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n } */\r\n const {readFile,writeFile}=require('fs')\r\n readFile('./content/r2.txt',(err,result)=>{\r\n     if (err){\r\n-        console.log(err)\r\n+       \r\n     }\r\n     console.log(result)\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654612089442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n } */\r\n const {readFile,writeFile}=require('fs')\r\n readFile('./content/r2.txt',(err,result)=>{\r\n     if (err){\r\n-       \r\n+       console.log(err)\r\n+       return\r\n     }\r\n     console.log(result)\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654612193166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n for (let i=1;i<27;i++){\r\n writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n } */\r\n const {readFile,writeFile}=require('fs')\r\n-readFile('./content/r2.txt',(err,result)=>{\r\n+readFile('./content/r2.txt','utf-8',(err,result)=>{\r\n     if (err){\r\n        console.log(err)\r\n        return\r\n     }\r\n"
+                },
+                {
+                    "date": 1654612209675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n for (let i=1;i<27;i++){\r\n writeFileSync(\"./content/subfolder/new.txt\",`Hello ${i}\\n`,{flag:'a'})\r\n } */\r\n const {readFile,writeFile}=require('fs')\r\n-readFile('./content/r2.txt','utf-8',(err,result)=>{\r\n+readFile('./content/f2.txt','utf-8',(err,result)=>{\r\n     if (err){\r\n        console.log(err)\r\n        return\r\n     }\r\n"
+                },
+                {
+                    "date": 1654612831108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,21 @@\n     if (err){\r\n        console.log(err)\r\n        return\r\n     }\r\n-    console.log(result)\r\n+    const first=result\r\n+    readFile('./content/subfolder/f1.txt','utf-8',(err,result)=>{\r\n+        if (err){\r\n+            console.log(err)\r\n+            return\r\n+        }\r\n+        const second=result\r\n+        writeFile('./content/subfolder/new.txt','utf-8',(err,result)=>\r\n+        {\r\n+            if (err){\r\n+console.log(err)\r\n+            }\r\n+            console.log(result)\r\n+        })\r\n+        \r\n+    })\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654612884424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             console.log(err)\r\n             return\r\n         }\r\n         const second=result\r\n-        writeFile('./content/subfolder/new.txt','utf-8',(err,result)=>\r\n+        writeFile('./content/subfolder/new.txt',\"Result: \\n first\\n second\",'utf-8',(err,result)=>\r\n         {\r\n             if (err){\r\n console.log(err)\r\n             }\r\n"
+                },
+                {
+                    "date": 1654612961163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             console.log(err)\r\n             return\r\n         }\r\n         const second=result\r\n-        writeFile('./content/subfolder/new.txt',\"Result: \\n first\\n second\",'utf-8',(err,result)=>\r\n+        writeFile('./content/subfolder/new.txt',`Result: \\n ${first}\\n ${second}`,'utf-8',(err,result)=>\r\n         {\r\n             if (err){\r\n console.log(err)\r\n             }\r\n"
+                }
+            ],
+            "date": 1654610053009,
+            "name": "Commit-0",
+            "content": "const file=require(\"fs\")"
+        }
+    ]
+}

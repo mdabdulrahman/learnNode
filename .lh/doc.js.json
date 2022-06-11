@@ -1,0 +1,18 @@
+{
+    "sourceFile": "doc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1654445031713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1654445031713,
+            "name": "Commit-0",
+            "content": "var MongoClient = require('mongodb').MongoClient;\r\nvar url = \"mongodb://localhost:27017/\";\r\n\r\nMongoClient.connect(url, function(err, db) {\r\n  if (err) throw err;\r\n  var dbo = db.db(\"mydb\");\r\n  dbo.createCollection(\"customers\", function(err, res) {\r\n    if (err) throw err;\r\n    console.log(\"Collection created!\");\r\n    db.close();\r\n  });\r\n});\r\n"
+        }
+    ]
+}

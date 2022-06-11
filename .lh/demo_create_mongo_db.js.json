@@ -1,0 +1,50 @@
+{
+    "sourceFile": "demo_create_mongo_db.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1654266919688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654267090334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://localhost:8080/mydb\";\r\n+var url = \"mongodb://localhost:6060/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n"
+                },
+                {
+                    "date": 1654267245049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://localhost:6060/mydb\";\r\n+var url = \"mongodb://localhost:27017/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n"
+                },
+                {
+                    "date": 1654268089139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://localhost:27017/mydb\";\r\n+var url = \"mongodb://0.0.0.0:27017/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n"
+                },
+                {
+                    "date": 1654268222283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+var MongoClient = require('mongodb').MongoClient;\r\n+var url = \"mongodb://localhost:27017/mydb\";\r\n+\r\n+MongoClient.connect(url, function(err, db) {\r\n+  if (err){\r\n+  console.log(\"Database created!\");\r\n+  db.close();}\r\n+  else{\r\n+      console.log(\"Error\")\r\n+  }\r\n+});\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654268345447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,8 @@\n var MongoClient = require('mongodb').MongoClient;\r\n var url = \"mongodb://localhost:27017/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n-  if (err){\r\n-  console.log(\"Database created!\");\r\n-  db.close();}\r\n-  else{\r\n-      console.log(\"Error\")\r\n-  }\r\n-});\n-var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://0.0.0.0:27017/mydb\";\r\n-\r\n-MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n   db.close();\r\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654444472562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://localhost:27017/mydb\";\r\n+var url = \"mongodb://127.0.0.1:27017/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n   db.close();\r\n\\ No newline at end of file\n-});\n+});\r\n"
+                },
+                {
+                    "date": 1654444607308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var MongoClient = require('mongodb').MongoClient;\r\n-var url = \"mongodb://127.0.0.1:27017/mydb\";\r\n+var url = \"mongodb://localhost:27017/mydb\";\r\n \r\n MongoClient.connect(url, function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n   db.close();\r\n\\ No newline at end of file\n-});\n+});\r\n"
+                },
+                {
+                    "date": 1654444739392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n var MongoClient = require('mongodb').MongoClient;\r\n var url = \"mongodb://localhost:27017/mydb\";\r\n \r\n-MongoClient.connect(url, function(err, db) {\r\n+MongoClient.connect(\"mongodb://localhost:27017/mydb\", function(err, db) {\r\n   if (err) throw err;\r\n   console.log(\"Database created!\");\r\n   db.close();\r\n\\ No newline at end of file\n-});\n+});\r\n"
+                }
+            ],
+            "date": 1654266919688,
+            "name": "Commit-0",
+            "content": "var MongoClient = require('mongodb').MongoClient;\r\nvar url = \"mongodb://localhost:8080/mydb\";\r\n\r\nMongoClient.connect(url, function(err, db) {\r\n  if (err) throw err;\r\n  console.log(\"Database created!\");\r\n  db.close();\r\n});"
+        }
+    ]
+}

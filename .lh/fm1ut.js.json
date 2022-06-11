@@ -1,0 +1,26 @@
+{
+    "sourceFile": "fm1ut.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1654524989400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1654525116061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n+const secret=\"Top Secret\"\r\n const abdul=\"abdul\"\r\n const rahman=\"rahman\"\r\n console.log(module);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1654525174718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n const secret=\"Top Secret\"\r\n const abdul=\"abdul\"\r\n const rahman=\"rahman\"\r\n+module.exports={abdul,rahman}\r\n console.log(module);\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1654524989400,
+            "name": "Commit-0",
+            "content": "const abdul=\"abdul\"\r\nconst rahman=\"rahman\"\r\nconsole.log(module);"
+        }
+    ]
+}
