@@ -1,0 +1,22 @@
+{
+    "sourceFile": "m6.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1655044418287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1655044480374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const {readFile}=require('fs')\r\n console.log('started a first task')\r\n-readFile('./content/new.txt','utf8',(err,result)=>{\r\n+readFile('./new.txt','utf8',(err,result)=>{\r\n     if (err){\r\n         console.log(err)\r\n         return \r\n     }\r\n"
+                }
+            ],
+            "date": 1655044418287,
+            "name": "Commit-0",
+            "content": "const {readFile}=require('fs')\r\nconsole.log('started a first task')\r\nreadFile('./content/new.txt','utf8',(err,result)=>{\r\n    if (err){\r\n        console.log(err)\r\n        return \r\n    }\r\n    console.log(result)\r\n    console.log('completed first task')\r\n})\r\nconsole.log('starting next task')"
+        }
+    ]
+}

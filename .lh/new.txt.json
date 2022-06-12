@@ -1,0 +1,18 @@
+{
+    "sourceFile": "new.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1655044447603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1655044447603,
+            "name": "Commit-0",
+            "content": "Hello world!!😷"
+        }
+    ]
+}
