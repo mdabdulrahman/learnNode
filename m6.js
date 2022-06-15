@@ -8,4 +8,4 @@ readFile('./new.txt','utf8',(err,result)=>{
     console.log(result)
     console.log('completed first task')
 })
-console.log('starting next task')
+console.log('starting next task')        

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1655044418287,
@@ -12,6 +12,10 @@
                 {
                     "date": 1655044480374,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n const {readFile}=require('fs')\r\n console.log('started a first task')\r\n-readFile('./content/new.txt','utf8',(err,result)=>{\r\n+readFile('./new.txt','utf8',(err,result)=>{\r\n     if (err){\r\n         console.log(err)\r\n         return \r\n     }\r\n"
+                },
+                {
+                    "date": 1655045064035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,5 @@\n     }\r\n     console.log(result)\r\n     console.log('completed first task')\r\n })\r\n-console.log('starting next task')\n\\ No newline at end of file\n+console.log('starting next task')        \n\\ No newline at end of file\n"
                 }
             ],
             "date": 1655044418287,
